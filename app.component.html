@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Введите данные</h2>
+<div class="col-xs-10">
+  <div class="form-group">
+    <label for="km">Количество километров</label>
+    <input
+      type="number"
+      class="form-control"
+      name="km"
+      [(ngModel)]="value.km"
+    />
+  </div>
+  <div class="form-group">
+    <label>Возраст</label>
+    <input
+      type="number"
+      class="form-control"
+      name="age"
+      [(ngModel)]="value.age"
+    />
+  </div>
+  <div class="form-group">
+    <label>Вес багажа</label>
+    <input
+      type="number"
+      class="form-control"
+      name="weight"
+      [(ngModel)]="value.weight"
+      
+    />
+  </div>
+  <div class="form-group">
+    <button
+      class="btn btn-primary"
+      (click)="payment()"
+    >
+      Рассчитать
+    </button>
+  </div>
+  </div>
+  <h2>Предложения</h2>
+    <div class="card">
+      <div class="card-header">
+        Авиакомпания Аэрофлот
+      </div>
+      <div class="card-body" [ngStyle]="{'display':avia.economy === 0 ? 'none' : 'block' }">Эконом : {{ avia.economy }} P</div>
+      <div class="card-body" [ngStyle]="{'display':avia.prod === 0 ? 'none' : 'block' }">Продвинутый : {{ avia.prod }} P</div>
+      <div class="card-body" [ngStyle]="{'display':avia.lux === 0 ? 'none' : 'block' }">Люкс: {{ avia.lux }} P</div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Железнодорожная компания РЖД
+      </div>
+      <div class="card-body" [ngStyle]="{'display':rjd.economy === 0 ? 'none' : 'block' }">Эконом : {{ rjd.economy }} P</div>
+      <div class="card-body" [ngStyle]="{'display':rjd.prod === 0 ? 'none' : 'block' }">Продвинутый : {{ rjd.prod }} P</div>
+      <div class="card-body" [ngStyle]="{'display':rjd.lux === 0 ? 'none' : 'block' }">Люкс: {{ rjd.lux }} P</div>
+    </div>
+</div>
